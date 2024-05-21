@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Runnimg_line</title>
+</head>
+<body>
+
+<form action="/download_video" method="post">
+    {% csrf_token %}
+    <label for="favcolor">Выберите цвет текста</label>
+    <input type="color" name="textcolor" value="#faebd7">
+
+    <label for="favcolor">Выберите цвет фона</label>
+    <input type="color" name="backgroundcolor" value="#6a5acd">
+
+    <input name="text">
+    <button type="submit"> Сгененрировать бегущую строку </button>
+
+</form>
+</body>
+</html>
