@@ -8,7 +8,7 @@ def create_running_line_video(text, textcolor, backgroundcolor):
     # Настраиваем шрифт
     font = cv2.FONT_HERSHEY_COMPLEX
     font_scale = 1.7
-    font_color = color
+    font_color = color[::-1]
     font_thickness = 2
 
     titel = text[:50] + hex
@@ -34,7 +34,7 @@ def create_running_line_video(text, textcolor, backgroundcolor):
     while text_x > -text_length:
         # Создаем фон
         frame = np.zeros((height, width, 3), dtype=np.uint8)
-        frame[:,:] = color
+        frame[:,:] = color[::-1]
         # Вкладываем тескт
         cv2.putText(frame, text, (int(text_x), 65), font, font_scale, font_color, font_thickness)
         # Записываем кадр
